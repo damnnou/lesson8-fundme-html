@@ -1,0 +1,114 @@
+:root {
+    /* primary colors */
+    --sub-heading: hsl(276, 100%, 81%);
+    --chat-on-the-left: hsl(276, 55%, 52%);
+    --chat-on-the-right: hsl(271, 15%, 43%);
+    --placeholder: hsl(206, 6%, 79%);
+    --main-heading: hsl(271, 36%, 24%);
+    --p: hsl(270, 7%, 64%);
+    --secondary-color: #00ff00; 
+    /* secondary colors */
+    --app-background: hsl(270, 20%, 96%);
+    --submit-button-background: hsl(271, 36%, 24%);
+    --radio-button-outline: hsl(289, 100%, 7 2%);
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 130px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+p {
+    color: var(--p);
+    line-height: 1.8rem;
+}
+
+h1 {
+    color: var(--main-heading);
+}
+
+.left-background-gradient {
+    z-index: -100;
+    position: absolute;
+    top:-10rem;
+    left:-15rem;
+    min-width: 49.5rem;
+    min-height: 62rem;
+    background: linear-gradient(to bottom, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    border-bottom-left-radius: 25rem;
+    border-bottom-right-radius: 25rem;
+}
+
+.right-background-gradient {
+    z-index: -100;
+    position: absolute;
+    bottom:-10rem;
+    right:-15rem;
+    min-width: 49.5rem;
+    min-height: 62rem;
+    background-color: var(--app-background);
+    border-top-left-radius: 25rem;
+    border-top-right-radius: 25rem;
+}
+
+.phone {
+    position: relative;
+    background-color: white;
+    min-width: 20rem;
+    min-height: 40rem;
+    padding: 15px;
+    border-radius: 3rem;
+    box-shadow: 1px 20px 40px 1px rgba(0, 0, 0, 0.1);
+    margin-right: 80px;
+}
+
+.phone-dynamic {
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+    left: 87.5px;
+    height: 5%;
+    width: 50%;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.phone-display {
+    overflow: hidden;
+    width: 100%;
+    height: 640px;
+    border-radius: 2rem;
+    background-color: var(--app-background);
+}
+
+.phone-display-header {
+    width: 100%;
+    height: 15%;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    box-shadow: 0px 0px 2px 0px;
+    background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+}
+
+.phone-display-body {
+    width: 100%;
+    height: 85%;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.left-box {
+    margin-left: 80px;
+    max-height: 39rem;
+    max-width: 30rem;
+}
+
