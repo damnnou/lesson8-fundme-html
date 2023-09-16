@@ -30,8 +30,18 @@ async function fund() {
       const transactionResponse = await contract.fund({
         value: ethers.parseEther(ethAmount),
       });
+      await listenForTransactionMine(transactionResponse, provider);
+      console.log("Done!");
     } catch (error) {
       console.log(error);
     }
   }
+}
+
+async function listenForTransactionMine(transactionResponse, provider) {
+  console.log(`Mining ${transactionResponse.hash}...`);
+  const tx = await (
+    await provider.waitForTransaction(transactionResponse.hash)
+  ).confirmations();
+  console.log(`Completed with ${tx} confirmations`);
 }
