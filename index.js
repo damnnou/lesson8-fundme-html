@@ -1,14 +1,6 @@
-const phoneDisplayHeader = document.getElementById('mtHeader');
 const inputValue = document.getElementById('messageInput');
 const messenger = document.getElementById('messenger');
-
-
 let messageValue;
-
-if (!window.walletConnected) {
-  phoneDisplayHeader.innerHTML = 'Connect Wallet'
-}
-
 const delay = (message, time) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -32,19 +24,21 @@ const welcomeMessages = async () => {
 const sendMessage = () => {
   const messageDiv = document.createElement('div');
   const messageBody = document.createElement('p');
-
   messageValue = inputValue.value;
-  messageDiv.classList.add('phone-display-body-messages-outgoing');
-  messageDiv.appendChild(messageBody);
-  messageBody.innerHTML = messageValue;
-  messenger.appendChild(messageDiv);
-
+  if (messageValue) {
+    messageDiv.classList.add('phone-display-body-messages-outgoing');
+    messageDiv.appendChild(messageBody);
+    messageBody.innerHTML = messageValue;
+    messenger.appendChild(messageDiv);
+  }
+  
   if (messageValue.toLowerCase().includes('connect')) {
     window.connectWallet();
   }
 
-  if (messageValue.toLowerCase().includes('connect')) {
-    window.connectWallet();
+  if (messageValue.toLowerCase().includes('fund')) {
+    const filter = messageValue.splice('fund','')
+    console.log(filter);
   }
 }
 
