@@ -1,6 +1,7 @@
 import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.min.js";
 import { abi, contractAddress } from "./constants.js";
 window.connectWallet = connectWallet;
+window.fund = fund;
 
 async function connectWallet() {
   if (typeof window.ethereum !== "undefined") {
@@ -26,8 +27,7 @@ async function getBalance() {
   }
 }
 
-async function fund() {
-  const ethAmount = document.getElementById("ethAmount").value;
+async function fund(ethAmount) {
   console.log(`Funding with ${ethAmount}...`);
   if (typeof window.ethereum !== "undefined") {
     const provider = new ethers.BrowserProvider(window.ethereum);
